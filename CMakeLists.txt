@@ -321,6 +321,10 @@ if(NOT EXISTS "${PROJECT_SOURCE_DIR}/ThirdParty/utilities/gmlc/utilities/stringO
 	submod_update(ThirdParty/utilities)
 endif()
 
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/ThirdParty/units/units/units.hpp")
+	submod_update(ThirdParty/units)
+endif()
+
 include(GNUInstallDirs)
 
 # -------------------------------------------------------------
@@ -574,6 +578,11 @@ target_include_directories(
 )
 set_target_properties(jsoncpp_lib PROPERTIES FOLDER Extern)
 endif()
+
+# --------------------------------------------------------------
+#  Create the target for jsoncpp
+# -----------------------------------------------------------
+include(addUnits)
 
 # -----------------------------------------------------------------------------
 # create utilities target
